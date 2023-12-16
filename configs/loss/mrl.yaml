@@ -1,5 +1,5 @@
 name: mrl
-margin: 2.0 # 2.0/1.0
+margin: 2.0 # cifar 2.0/ tiny 1.0
 alpha: 0.1 #0.1
 num_classes: 10 # cifar10 10  tiny 200
 ignore_index: -100

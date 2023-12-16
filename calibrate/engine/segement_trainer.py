@@ -14,7 +14,6 @@ from terminaltables.ascii_table import AsciiTable
 
 from calibrate.engine.trainer import Trainer
 from calibrate.net import ModelWithTemperature
-from .feature_scaling import ModelWithFscale
 from calibrate.losses import LogitMarginL1
 from calibrate.evaluation import (
     AverageMeter, LossMeter, SegmentEvaluator,

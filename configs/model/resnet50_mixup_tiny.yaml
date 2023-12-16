@@ -1,6 +1,6 @@
 name: resnet50_mixup_tiny
-num_classes: 10 #200
-mixup_alpha: 2.0 # cifar 2.0 / Tiny 1.0            
+num_classes: 200 #200
+mixup_alpha: 1.0 # cifar 2.0 / Tiny 1.0            
 layer_mix: 0 # 4(feature) / 0 
 num_mixup: 3 # 1 mrl / 3 mndcg
 

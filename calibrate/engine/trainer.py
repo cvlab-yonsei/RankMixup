@@ -11,7 +11,7 @@ import wandb
 from terminaltables.ascii_table import AsciiTable
 
 from calibrate.net import ModelWithTemperature
-from calibrate.losses import LogitMarginL1, ClassAdaptive
+from calibrate.losses import LogitMarginL1
 from calibrate.evaluation import (
     AverageMeter, LossMeter, ClassificationEvaluator,
     CalibrateEvaluator, LogitsEvaluator, ProbsEvaluator, LT_ClassificationEvaluator
