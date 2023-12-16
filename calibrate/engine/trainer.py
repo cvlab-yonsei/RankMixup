@@ -368,7 +368,7 @@ class Trainer:
             val_loss, val_score = self.eval_epoch(self.val_loader, epoch, phase="Val")
             # run lr scheduler
             self.scheduler.step()
-            if isinstance(self.loss_func, (LogitMarginL1, ClassAdaptive)):
+            if isinstance(self.loss_func, (LogitMarginL1)):
                 self.loss_func.schedule_alpha(epoch)
             if self.best_score is None or val_score > self.best_score:
                 self.best_score, self.best_epoch = val_score, epoch
