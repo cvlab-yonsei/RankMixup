@@ -1,0 +1,13 @@
+name: wide_resnet_mixup
+num_classes: 10 #200
+mixup_alpha: 2.0 # cifar 2.0 / Tiny 1.0            
+layer_mix: 0 # 3(feature) / 0 
+num_mixup: 3 # 1 mrl / 3 mndcg
+
+object:
+  _target_: calibrate.net.wide_resnet.wide_resnet_tiny_mixup # wide_resnet_cifar_mixup  wide_resnet_tiny_mixup
+  num_classes: ${model.num_classes}
+  mixup_alpha: ${model.mixup_alpha}
+  layer_mix: ${model.layer_mix}
+  num_mixup: ${model.num_mixup}
+  

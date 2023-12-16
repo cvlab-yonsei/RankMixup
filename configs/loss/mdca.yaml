@@ -1,0 +1,4 @@
+name: mdca
+
+object:
+  _target_: calibrate.losses.MDCA    

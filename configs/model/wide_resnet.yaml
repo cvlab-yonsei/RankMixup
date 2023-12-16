@@ -1,0 +1,8 @@
+name: wide_resnet
+num_classes: 200 #200
+
+object:
+  _target_: calibrate.net.wide_resnet.wide_resnet_tiny #wide_resnet_cifar  wide_resnet_tiny
+  num_classes: ${model.num_classes}
+  
+  

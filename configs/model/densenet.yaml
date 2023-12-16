@@ -1,0 +1,6 @@
+name: densenet
+num_classes: 200 #200 10 1000
+
+object:
+  _target_: calibrate.net.densenet.densenet121_tiny #densenet121_tiny densenet121
+  num_classes: ${model.num_classes}

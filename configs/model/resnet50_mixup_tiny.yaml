@@ -1,0 +1,13 @@
+name: resnet50_mixup_tiny
+num_classes: 10 #200
+mixup_alpha: 2.0 # cifar 2.0 / Tiny 1.0            
+layer_mix: 0 # 4(feature) / 0 
+num_mixup: 3 # 1 mrl / 3 mndcg
+
+object:
+  _target_: calibrate.net.resnet_mixup.resnet50_tiny #resnet50_tiny  resnet101_tiny  
+  num_classes: ${model.num_classes}
+  mixup_alpha: ${model.mixup_alpha}
+  layer_mix: ${model.layer_mix}
+  num_mixup: ${model.num_mixup}
+  

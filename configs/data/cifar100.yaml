@@ -1,0 +1,50 @@
+name: cifar100
+
+data_root: /dataset/cifar100
+batch_size: 128 #128
+num_workers: 4
+
+object:
+  trainval:
+    _target_: calibrate.data.cifar100.get_train_valid_loader
+    batch_size: ${data.batch_size}
+    augment: True
+    random_seed: ${seed}
+    shuffle: True
+    num_workers: 4
+    pin_memory: True
+    data_dir: ${data.data_root}
+  test:
+    _target_: calibrate.data.cifar100.get_test_loader
+    batch_size: ${data.batch_size}
+    shuffle: False
+    num_workers: 4
+    pin_memory: True
+    data_dir: ${data.data_root}
+  in_dist:
+    _target_: calibrate.data.cifar100.get_test_loader
+    batch_size: ${data.batch_size}
+    shuffle: False
+    num_workers: 4
+    pin_memory: True
+    data_dir: ${data.data_root}
+  # out_dist: 
+  #    _target_: calibrate.data.svhn.get_test_loader
+  #    data_dir: /workspace/log/dataset
+  #    batch_size: ${data.batch_size}
+  #    shuffle: False
+  #    num_workers: 4
+  #    pin_memory: True
+  out_dist: 
+    _target_: calibrate.data.cifar10.get_test_loader
+    batch_size: ${data.batch_size}
+    shuffle: False
+    num_workers: ${data.num_workers}
+    pin_memory: True
+    data_dir: /dataset/cifar10
+  # out_dist: 
+  #   _target_: calibrate.data.tiny_imagenet.get_test_loader
+  #   root: /workspace/log/output/tiny-imagenet-200
+  #   batch_size: ${data.batch_size}
+  #   num_workers: 4
+  #   pin_memory: True    
